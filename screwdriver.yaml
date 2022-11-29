@@ -1,0 +1,19 @@
+shared:
+  image: node:16
+
+jobs:
+  job1:
+    requires: [ ~commit ]
+    steps:
+      - hello: echo "Hello World!"
+
+  job2:
+    requires: [ ~commit ]
+    steps:
+      - hello: echo "Hello World!"
+
+  OR:
+    requires: [ ~job1, ~job2 ]
+    steps:
+      - test: echo "This job starts after job1 or job2 succeeded"
+ 
