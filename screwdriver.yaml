@@ -13,7 +13,7 @@ jobs:
         steps:
             - echo: echo test
         requires: [~SIMPLE]
-    JOIN:
+    MULTIPLE:
         steps:
             - echo: echo test
         requires: [~PARALLEL1, ~PARALLEL2]
